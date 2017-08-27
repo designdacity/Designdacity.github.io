@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>JavaScript通过原型设计一个事件对象 | Designdacity&#39;s BLOG | LY leo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    
+    <meta name="keywords" content="JavaScript,prototype">
+    <meta name="description" content="JavaScript通过原型设计一个事件对象实现以下功能：1. 添加监听者 2. 移除监听者 3. 清空监听者 4. 发起事件信号 设计思路如下：定义一个对象，包含一个实例成员listeners，用于记录所有的监听者 为对象的原型增加，新增、删除、清空和执行四个成员 具体代码可以参见下面示例 代码实现     hljs.initHighlightingOnLoad();  123456789101">
+<meta name="keywords" content="JavaScript,prototype">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript通过原型设计一个事件对象">
+<meta property="og:url" content="http://yoursite.com/2017/08/27/2017/8/2/index.html">
+<meta property="og:site_name" content="Designdacity&#39;s BLOG">
+<meta property="og:description" content="JavaScript通过原型设计一个事件对象实现以下功能：1. 添加监听者 2. 移除监听者 3. 清空监听者 4. 发起事件信号 设计思路如下：定义一个对象，包含一个实例成员listeners，用于记录所有的监听者 为对象的原型增加，新增、删除、清空和执行四个成员 具体代码可以参见下面示例 代码实现     hljs.initHighlightingOnLoad();  123456789101">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-08-20T15:19:00.402Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaScript通过原型设计一个事件对象">
+<meta name="twitter:description" content="JavaScript通过原型设计一个事件对象实现以下功能：1. 添加监听者 2. 移除监听者 3. 清空监听者 4. 发起事件信号 设计思路如下：定义一个对象，包含一个实例成员listeners，用于记录所有的监听者 为对象的原型增加，新增、删除、清空和执行四个成员 具体代码可以参见下面示例 代码实现     hljs.initHighlightingOnLoad();  123456789101">
+    
+        <link rel="alternate" type="application/atom+xml" title="Designdacity&#39;s BLOG" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/">
+    <link rel="stylesheet" href="/css/style.css?v=1.6.13">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu"  >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Lei Y1</h5>
+          <a href="mailto:undefined" class="mail">
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">JavaScript通过原型设计一个事件对象</div>
+        
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">JavaScript通过原型设计一个事件对象</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2017-08-27T12:30:16.671Z" itemprop="datePublished" class="page-time">
+  2017-08-27
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Javascript/">Javascript</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+<article id="post-2017/8/2"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">JavaScript通过原型设计一个事件对象</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2017-08-27 20:30:16" datetime="2017-08-27T12:30:16.671Z"  itemprop="datePublished">2017-08-27</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/Javascript/">Javascript</a></li></ul>
+
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="JavaScript通过原型设计一个事件对象"><a href="#JavaScript通过原型设计一个事件对象" class="headerlink" title="JavaScript通过原型设计一个事件对象"></a>JavaScript通过原型设计一个事件对象</h1><h3 id="实现以下功能："><a href="#实现以下功能：" class="headerlink" title="实现以下功能："></a>实现以下功能：</h3><pre><code>1. 添加监听者
+2. 移除监听者
+3. 清空监听者
+4. 发起事件信号
+</code></pre><h3 id="设计思路如下："><a href="#设计思路如下：" class="headerlink" title="设计思路如下："></a>设计思路如下：</h3><pre><code>定义一个对象，包含一个实例成员listeners，用于记录所有的监听者
+为对象的原型增加，新增、删除、清空和执行四个成员
+具体代码可以参见下面示例
+</code></pre><h3 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h3><link href="http://cdn.bootcss.com/highlight.js/8.0/styles/monokai_sublime.min.css" rel="stylesheet">
+
+<script src="http://cdn.bootcss.com/highlight.js/8.0/highlight.min.js"></script>  
+<script>hljs.initHighlightingOnLoad();</script>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">myEvent</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">this</span>.listeners = [];    <span class="comment">//监听者列表</span></div><div class="line">&#125;</div><div class="line"><span class="comment">//添加一个监听者</span></div><div class="line">myEvent.prototype.addListener = <span class="function"><span class="keyword">function</span>(<span class="params">fn</span>)</span>&#123;</div><div class="line">    <span class="keyword">this</span>.listeners.push(fn);</div><div class="line">&#125;;</div><div class="line"><span class="comment">//除移一个监听者</span></div><div class="line">myEvent.prototype.removeListener = <span class="function"><span class="keyword">function</span>(<span class="params">fn</span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> index = <span class="keyword">this</span>.listeners.indexOf(fn);</div><div class="line">    <span class="keyword">this</span>.listeners.splice(index,<span class="number">1</span>);</div><div class="line">&#125;;</div><div class="line"><span class="comment">//清除所有监听者</span></div><div class="line">myEvent.prototype.clearListeners = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">this</span>.listeners = [];</div><div class="line">&#125;;</div><div class="line"><span class="comment">//发出执行信号，并告之所有监听者</span></div><div class="line">myEvent.prototype.raise = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</div><div class="line">    <span class="keyword">var</span> l = <span class="keyword">this</span>.listeners.length;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; l; i++)&#123;</div><div class="line">        <span class="keyword">this</span>.listeners[i](e);    <span class="comment">//执行所有监听方法</span></div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">var</span> me = <span class="keyword">new</span> myEvent();</div><div class="line"></div><div class="line"><span class="comment">//事件fun1</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun1</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'fun1: '</span> + e);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//事件fun2</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fun2</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'fun2: '</span> + e);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">//调用相关方法进行测试</span></div><div class="line">me.addListener(fun1);</div><div class="line">me.addListener(fun2);</div><div class="line">me.removeListener(fun1)</div><div class="line"><span class="comment">//me.clearListeners();</span></div><div class="line">me.raise(<span class="string">"a"</span>);</div></pre></td></tr></table></figure>
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+
+        
+    </div>
+    <footer>
+        <a href="http://yoursite.com">
+            <img src="/" alt="Lei Y1">
+            Lei Y1
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/prototype/">prototype</a></li></ul>
+
+
+            
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2017/08/27/2017/8/3/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Ajax学习笔记</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2017/08/27/2017/8/1/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">JavaScript编码规范指南</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Lei Y1 &copy; 2017</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: , REWARD: false };
+
+
+</script>
+
+<script src="/js/main.min.js?v=1.6.13"></script>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
