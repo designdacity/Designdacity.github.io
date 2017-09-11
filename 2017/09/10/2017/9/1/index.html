@@ -20,18 +20,18 @@
     
     
     <meta name="keywords" content="JavaScript,call,apply">
-    <meta name="description" content="JavaScript中的call和apply应用 ECMAScript3给Function的原型定义了两个方法，他们是Function.prototype.call 和 Function.prototype.apply. 在实际开发中，特别是在一些函数式风格的代码编写中，call和apply方法尤为有用。 call和apply区别 其实他们的作用是一样的，只是传递的参数不一样而已。apply接受2">
+    <meta name="description" content="JavaScript中的call和apply应用 ECMAScript3给Function的原型定义了两个方法，他们是Function.prototype.call 和 Function.prototype.apply. 在实际开发中，特别是在一些函数式风格的代码编写中，call和apply方法尤为有用。  call和apply区别其实他们的作用是一样的，只是传递的参数不一样而已。apply接受2">
 <meta name="keywords" content="JavaScript,call,apply">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript中的call和apply应用">
 <meta property="og:url" content="http://yoursite.com/2017/09/10/2017/9/1/index.html">
 <meta property="og:site_name" content="Designdacity&#39;s BLOG">
-<meta property="og:description" content="JavaScript中的call和apply应用 ECMAScript3给Function的原型定义了两个方法，他们是Function.prototype.call 和 Function.prototype.apply. 在实际开发中，特别是在一些函数式风格的代码编写中，call和apply方法尤为有用。 call和apply区别 其实他们的作用是一样的，只是传递的参数不一样而已。apply接受2">
+<meta property="og:description" content="JavaScript中的call和apply应用 ECMAScript3给Function的原型定义了两个方法，他们是Function.prototype.call 和 Function.prototype.apply. 在实际开发中，特别是在一些函数式风格的代码编写中，call和apply方法尤为有用。  call和apply区别其实他们的作用是一样的，只是传递的参数不一样而已。apply接受2">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-11T01:48:31.698Z">
+<meta property="og:updated_time" content="2017-09-11T01:51:45.908Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript中的call和apply应用">
-<meta name="twitter:description" content="JavaScript中的call和apply应用 ECMAScript3给Function的原型定义了两个方法，他们是Function.prototype.call 和 Function.prototype.apply. 在实际开发中，特别是在一些函数式风格的代码编写中，call和apply方法尤为有用。 call和apply区别 其实他们的作用是一样的，只是传递的参数不一样而已。apply接受2">
+<meta name="twitter:description" content="JavaScript中的call和apply应用 ECMAScript3给Function的原型定义了两个方法，他们是Function.prototype.call 和 Function.prototype.apply. 在实际开发中，特别是在一些函数式风格的代码编写中，call和apply方法尤为有用。  call和apply区别其实他们的作用是一样的，只是传递的参数不一样而已。apply接受2">
     
         <link rel="alternate" type="application/atom+xml" title="Designdacity&#39;s BLOG" href="/atom.xml">
     
@@ -132,7 +132,7 @@
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
                 <i class="icon icon-lg icon-chevron-left"></i>
             </a>
-            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="搜尋">
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="Search">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
                 <i class="icon icon-lg icon-search"></i>
             </a>
@@ -200,8 +200,8 @@
         <div class="post-content" id="post-content" itemprop="postContent">
             <h2 id="JavaScript中的call和apply应用"><a href="#JavaScript中的call和apply应用" class="headerlink" title="JavaScript中的call和apply应用"></a>JavaScript中的call和apply应用</h2><blockquote>
 <p><code>ECMAScript3</code>给<code>Function</code>的原型定义了两个方法，他们是<code>Function.prototype.call</code> 和 <code>Function.prototype.apply</code>. 在实际开发中，特别是在一些函数式风格的代码编写中，call和apply方法尤为有用。</p>
-<h3 id="call和apply区别"><a href="#call和apply区别" class="headerlink" title="call和apply区别"></a>call和apply区别</h3></blockquote>
-<p>其实他们的作用是一样的，只是传递的参数不一样而已。<br><code>apply</code>接受<code>2</code>个参数，第一个参数指定了函数体内<code>this</code>对象的指向，第二个参数为数组或者一个类数组。<code>apply</code>传入的是一个参数数组，也就是将多个参数组合成为一个数组传入，而<code>call</code>则作为<code>call</code>的参数传入（从第二个参数开始）。</p>
+</blockquote>
+<h3 id="call和apply区别"><a href="#call和apply区别" class="headerlink" title="call和apply区别"></a>call和apply区别</h3><p>其实他们的作用是一样的，只是传递的参数不一样而已。<br><code>apply</code>接受<code>2</code>个参数，第一个参数指定了函数体内<code>this</code>对象的指向，第二个参数为数组或者一个类数组。<code>apply</code>传入的是一个参数数组，也就是将多个参数组合成为一个数组传入，而<code>call</code>则作为<code>call</code>的参数传入（从第二个参数开始）。</p>
 <p>举个栗子：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> obj1 = &#123;</div><div class="line">    name: <span class="string">'designdacity'</span>,</div><div class="line">    getName: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">this</span>.name;</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="keyword">const</span> obj2 = &#123;</div><div class="line">    name: <span class="string">'Leiyi'</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(obj1.getName());  <span class="comment">// "designdacity"</span></div><div class="line"><span class="built_in">console</span>.log(obj1.getName.call(obj2));  <span class="comment">// "Leiyi"</span></div><div class="line"><span class="built_in">console</span>.log(obj1.getName.apply(obj2));  <span class="comment">// "Leiyi"</span></div></pre></td></tr></table></figure></p>
 <h3 id="call和apply的用途"><a href="#call和apply的用途" class="headerlink" title="call和apply的用途"></a>call和apply的用途</h3><h4 id="改变this指向"><a href="#改变this指向" class="headerlink" title="改变this指向"></a>改变this指向</h4><p>call和apply可以改变this的指向，这点我们从上面这个例子中可以看出。我们还可以举一个实际当中可以遇到的情况：</p>
 <p>有的时候我们会觉得<code>document.getElementById</code>这个方法太长了，我们会尝试用一个短函数来代替它，如同<code>prototype.js</code>等一些框架所做过的事情，下面用代码说明：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> getId = <span class="function"><span class="keyword">function</span>(<span class="params">id</span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="built_in">document</span>.getElementById(id);</div><div class="line">&#125;</div><div class="line"></div><div class="line">getId(<span class="string">'id'</span>);</div></pre></td></tr></table></figure></p>
@@ -220,7 +220,7 @@
     <div class="content">
         
 <span class="post-time">
-    最後更新時間：<time datetime="2017-09-11T01:48:31.698Z" itemprop="dateUpdated">2017-09-11 09:48:31</time>
+    Last updated: <time datetime="2017-09-11T01:51:45.908Z" itemprop="dateUpdated">2017-09-11 09:51:45</time>
 </span><br>
 
 
@@ -379,7 +379,7 @@
             
                 <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>本部落格係採用<a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh_TW">創用 CC 姓名標示 4.0 國際 授權條款授權</a></span>
+            <span>This blog is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.</span>
         </p>
     </div>
     <div class="bottom">
