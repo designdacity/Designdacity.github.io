@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-09-27T15:24:55.896Z</updated>
+  <updated>2017-10-09T03:13:36.710Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,77 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>前端面试题小集</title>
+    <link href="http://yoursite.com/2017/10/09/2017/10/9/"/>
+    <id>http://yoursite.com/2017/10/09/2017/10/9/</id>
+    <published>2017-10-09T03:12:28.583Z</published>
+    <updated>2017-10-09T03:13:36.710Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前端面试题小集"><a href="#前端面试题小集" class="headerlink" title="前端面试题小集"></a>前端面试题小集</h2><p>话不多说，先上题。</p>
+<h5 id="一、一个页面上两个div左右铺满整个浏览器，要保证左边的div一直为100px，右边的div跟随浏览器大小变化（比如浏览器为500，右边div为400，浏览器为900，右边div为800），请写出大概的css代码。"><a href="#一、一个页面上两个div左右铺满整个浏览器，要保证左边的div一直为100px，右边的div跟随浏览器大小变化（比如浏览器为500，右边div为400，浏览器为900，右边div为800），请写出大概的css代码。" class="headerlink" title="一、一个页面上两个div左右铺满整个浏览器，要保证左边的div一直为100px，右边的div跟随浏览器大小变化（比如浏览器为500，右边div为400，浏览器为900，右边div为800），请写出大概的css代码。"></a>一、一个页面上两个div左右铺满整个浏览器，要保证左边的div一直为100px，右边的div跟随浏览器大小变化（比如浏览器为500，右边div为400，浏览器为900，右边div为800），请写出大概的css代码。</h5><p>1.使用flex<br><figure class="highlight htmlbars"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">//html</div><div class="line">&lt;div class='box'&gt;</div><div class="line">	&lt;div class='left'&gt;&lt;/div&gt; </div><div class="line">	&lt;div class='right'&gt;&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">//css</div><div class="line"><span class="selector-class">.box</span> &#123;</div><div class="line">    <span class="attribute">width</span>: <span class="number">400px</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">100px</span>;</div><div class="line">    <span class="attribute">display</span>: flex;</div><div class="line">    <span class="attribute">flex-direction</span>: row;</div><div class="line">    <span class="attribute">align-items</span>: center;</div><div class="line">    <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#c3c3c3</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.left</span> &#123;</div><div class="line">    flex-basis：100px;</div><div class="line">    <span class="selector-tag">-webkit-flex-basis</span>: 100<span class="selector-tag">px</span>;</div><div class="line">    <span class="comment">/* Safari 6.1+ */</span></div><div class="line">    <span class="selector-tag">background-color</span>: <span class="selector-tag">red</span>;</div><div class="line">    <span class="selector-tag">height</span>: 100%;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.right</span> &#123;</div><div class="line">    <span class="attribute">background-color</span>: blue;</div><div class="line">    <span class="attribute">flex-grow</span>: <span class="number">1</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p> 2.浮动布局<br><figure class="highlight htmlbars"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;div id="left"&gt;Left sidebar&lt;/div&gt;</div><div class="line">&lt;div id="content"&gt;Main Content&lt;/div&gt;</div></pre></td></tr></table></figure></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">&lt;style type="text/css"&gt;</div><div class="line">* &#123;</div><div class="line">    <span class="attribute">margin</span>: <span class="number">0</span>;</div><div class="line">    <span class="attribute">padding</span>: <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-id">#left</span> &#123;</div><div class="line">    <span class="attribute">float</span>: left;</div><div class="line">    <span class="attribute">width</span>: <span class="number">220px</span>;</div><div class="line">    <span class="attribute">background-color</span>: green;</div><div class="line">&#125;</div><div class="line"><span class="selector-id">#content</span> &#123;</div><div class="line">    <span class="attribute">background-color</span>: orange;</div><div class="line">    <span class="attribute">margin-left</span>: <span class="number">220px</span>;</div><div class="line">    <span class="comment">/*==等于左边栏宽度==*/</span></div><div class="line">&#125;</div><div class="line">&lt;/style&gt;</div></pre></td></tr></table></figure>
+<h5 id="二、请写出一些前端性能优化的方式，越多越好"><a href="#二、请写出一些前端性能优化的方式，越多越好" class="headerlink" title="二、请写出一些前端性能优化的方式，越多越好"></a>二、请写出一些前端性能优化的方式，越多越好</h5><blockquote>
+<p>1.减少dom操作<br>2.部署前，图片压缩，代码压缩<br>3.优化js代码结构，减少冗余代码<br>4.减少http请求，合理设置 HTTP缓存<br>5.使用内容分发cdn加速<br>6.静态资源缓存<br>7.图片延迟加载</p>
+</blockquote>
+<h5 id="三、一个页面从输入-URL-到页面加载显示完成，这个过程中都发生了什么？（流程说的越详细越好）"><a href="#三、一个页面从输入-URL-到页面加载显示完成，这个过程中都发生了什么？（流程说的越详细越好）" class="headerlink" title="三、一个页面从输入 URL 到页面加载显示完成，这个过程中都发生了什么？（流程说的越详细越好）"></a>三、一个页面从输入 URL 到页面加载显示完成，这个过程中都发生了什么？（流程说的越详细越好）</h5><blockquote>
+<p>输入地址<br>1.浏览器查找域名的 IP 地址<br>2.这一步包括 DNS 具体的查找过程，包括：浏览器缓存-&gt;系统缓存-&gt;路由器缓存…<br>3.浏览器向 web 服务器发送一个 HTTP 请求<br>4.服务器的永久重定向响应（从 <a href="http://example.com" target="_blank" rel="external">http://example.com</a> 到 <a href="http://www.example.com）" target="_blank" rel="external">http://www.example.com）</a><br>5.浏览器跟踪重定向地址<br>6.服务器处理请求<br>7.服务器返回一个 HTTP 响应<br>8.浏览器显示 HTML<br>9.浏览器发送请求获取嵌入在 HTML 中的资源（如图片、音频、视频、CSS、JS等等）<br>10.浏览器发送异步请求</p>
+</blockquote>
+<h5 id="四、请大概描述下页面访问cookie的限制条件"><a href="#四、请大概描述下页面访问cookie的限制条件" class="headerlink" title="四、请大概描述下页面访问cookie的限制条件"></a>四、请大概描述下页面访问cookie的限制条件</h5><blockquote>
+<p>跨域问题<br>设置了HttpOnly</p>
+</blockquote>
+<h5 id="五、描述浏览器重绘和回流，哪些方法能够改善由于dom操作产生的回流"><a href="#五、描述浏览器重绘和回流，哪些方法能够改善由于dom操作产生的回流" class="headerlink" title="五、描述浏览器重绘和回流，哪些方法能够改善由于dom操作产生的回流"></a>五、描述浏览器重绘和回流，哪些方法能够改善由于dom操作产生的回流</h5><p>1.直接改变className，如果动态改变样式，则使用cssText<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 不好的写法</span></div><div class="line"><span class="keyword">var</span> left = <span class="number">1</span>;</div><div class="line"><span class="keyword">var</span> top = <span class="number">1</span>;</div><div class="line">el.style.left = left + <span class="string">"px"</span>;</div><div class="line">el.style.top = top + <span class="string">"px"</span>; <span class="comment">// 比较好的写法</span></div><div class="line">el.className += <span class="string">" className1"</span>;</div><div class="line"><span class="comment">// 比较好的写法</span></div><div class="line">el.style.cssText += <span class="string">";</span></div><div class="line"><span class="string">left: "</span> + left + <span class="string">"px;</span></div><div class="line"><span class="string">top: "</span> + top + <span class="string">"px;"</span>;</div></pre></td></tr></table></figure></p>
+<p>2.让要操作的元素进行”离线处理”，处理完后一起更新</p>
+<blockquote>
+<p>a) 使用<code>DocumentFragment</code>进行缓存操作,引发一次回流和重绘；<br>b) 使用<code>display:none</code>技术，只引发两次回流和重绘；<br>c) 使用<code>cloneNode(true or false)</code> 和 <code>replaceChild</code>技术，引发一次回流和重绘</p>
+</blockquote>
+<h5 id="六、vue生命周期钩子"><a href="#六、vue生命周期钩子" class="headerlink" title="六、vue生命周期钩子"></a>六、vue生命周期钩子</h5><blockquote>
+<p>1.beforcreate<br>2.created<br>3.beformount<br>4.mounted<br>5.beforeUpdate<br>6.updated<br>7.actived<br>8.deatived<br>9.beforeDestroy<br>10.destroyed</p>
+</blockquote>
+<h5 id="七、js跨域请求的方式，能写几种是几种"><a href="#七、js跨域请求的方式，能写几种是几种" class="headerlink" title="七、js跨域请求的方式，能写几种是几种"></a>七、js跨域请求的方式，能写几种是几种</h5><blockquote>
+<p>1、通过<code>jsonp</code>跨域<br>2、通过修改<code>document.domain</code>来跨子域<br>3、使用<code>window.name</code>来进行跨域<br>4、使用HTML5中新引进的<code>window.postMessage</code>方法来跨域传送数据（ie 67 不支持）<br>5、CORS 需要服务器设置<code>header ：Access-Control-Allow-Origin</code>。<br>6<code>、nginx反向代理</code> 这个方法一般很少有人提及，但是他可以不用目标服务器配合，不过需要你搭建一个中转nginx服务器，用于转发请求</p>
+</blockquote>
+<h5 id="八、对前端工程化的理解"><a href="#八、对前端工程化的理解" class="headerlink" title="八、对前端工程化的理解"></a>八、对前端工程化的理解</h5><blockquote>
+<p>1.开发规范<br>2.模块化开发<br>3.组件化开发<br>4.组件仓库<br>5.性能优化<br>6.项目部署<br>7.开发流程<br>8.开发工具</p>
+</blockquote>
+<h5 id="九-js深度复制的方式"><a href="#九-js深度复制的方式" class="headerlink" title="九, js深度复制的方式"></a>九, js深度复制的方式</h5><blockquote>
+<p>1.使用jq的<code>$.extend(true, target, obj)</code><br>2.<code>newobj = Object.create(sourceObj)</code>，// 但是这个是有个问题就是 newobj的更改不会影响到 sourceobj但是 sourceobj的更改会影响到newObj<br>3.<code>newobj = JSON.parse(JSON.stringify(sourceObj))</code></p>
+</blockquote>
+<h5 id="十、js设计模式"><a href="#十、js设计模式" class="headerlink" title="十、js设计模式"></a>十、js设计模式</h5><p>总体来说设计模式分为<code>三大类</code>：</p>
+<ul>
+<li>创建型模式，共五种：工厂方法模式、抽象工厂模式、单例模式、建造者模式、原型模式。</li>
+<li>结构型模式，共七种：适配器模式、装饰器模式、代理模式、外观模式、桥接模式、组合模式、享元模式。</li>
+<li>行为型模式，共十一种：策略模式、模板方法模式、观察者模式、迭代子模式、责任链模式、命令模式、备忘录模式、状态模式、访问者模式、中介者模</li>
+</ul>
+<h5 id="十一、图片预览"><a href="#十一、图片预览" class="headerlink" title="十一、图片预览"></a>十一、图片预览</h5><figure class="highlight htmlbars"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;input type="file" name="file" onchange="showPreview(this)" /&gt;</div><div class="line">&lt; img id="portrait" src="" width="70" height="75"&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">showPreview</span>(<span class="params">source</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> file = source.files[<span class="number">0</span>];</div><div class="line">  <span class="keyword">if</span>(<span class="built_in">window</span>.FileReader) &#123;</div><div class="line">      <span class="keyword">var</span> fr = <span class="keyword">new</span> FileReader();</div><div class="line">      fr.onloadend = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</div><div class="line">        <span class="built_in">document</span>.getElementById(<span class="string">"portrait"</span>).src = e.target.result;</div><div class="line">      &#125;;</div><div class="line">      fr.readAsDataURL(file);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h5 id="十二、扁平化多维数组"><a href="#十二、扁平化多维数组" class="headerlink" title="十二、扁平化多维数组"></a>十二、扁平化多维数组</h5><p>1、老方法<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> result = []</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">unfold</span>(<span class="params">arr</span>)</span>&#123;</div><div class="line">     <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt; arr.length;i++)&#123;</div><div class="line">      <span class="keyword">if</span>(<span class="keyword">typeof</span> arr[i]==<span class="string">"object"</span> &amp;&amp; arr[i].length&gt;<span class="number">1</span>) &#123;</div><div class="line">       unfold(arr[i]);</div><div class="line">     &#125; <span class="keyword">else</span> &#123;        </div><div class="line">       result.push(arr[i]);</div><div class="line">     &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,[<span class="number">6</span>,[<span class="number">0</span>,<span class="number">1</span>,<span class="number">5</span>],<span class="number">9</span>],[<span class="number">2</span>,<span class="number">5</span>,[<span class="number">1</span>,<span class="number">5</span>]],[<span class="number">5</span>]];</div><div class="line">unfold(arr)</div></pre></td></tr></table></figure></p>
+<p>2、使用tostring<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> c=[<span class="number">1</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,[<span class="number">6</span>,[<span class="number">0</span>,<span class="number">1</span>,<span class="number">5</span>],<span class="number">9</span>],[<span class="number">2</span>,<span class="number">5</span>,[<span class="number">1</span>,<span class="number">5</span>]],[<span class="number">5</span>]];</div><div class="line"><span class="keyword">var</span> b = c.toString().split(<span class="string">','</span>)</div></pre></td></tr></table></figure></p>
+<p>3、使用es6的reduce函数<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> arr=[<span class="number">1</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,[<span class="number">6</span>,[<span class="number">0</span>,<span class="number">1</span>,<span class="number">5</span>],<span class="number">9</span>],[<span class="number">2</span>,<span class="number">5</span>,[<span class="number">1</span>,<span class="number">5</span>]],[<span class="number">5</span>]];</div><div class="line"><span class="keyword">const</span> flatten = <span class="function"><span class="params">arr</span> =&gt;</span> arr.reduce(<span class="function">(<span class="params">a, b</span>) =&gt;</span> a.concat(<span class="built_in">Array</span>.isArray(b) ? flatten(b) : b), []);</div><div class="line"><span class="keyword">var</span> result = flatten(arr)</div></pre></td></tr></table></figure></p>
+<h5 id="十三、iframe有那些缺点？"><a href="#十三、iframe有那些缺点？" class="headerlink" title="十三、iframe有那些缺点？"></a>十三、iframe有那些缺点？</h5><ul>
+<li>iframe会阻塞主页面的Onload事件；</li>
+<li>搜索引擎的检索程序无法解读这种页面，不利于SEO;</li>
+<li>iframe和主页面共享连接池，而浏览器对相同域的连接有限制，所以会影响页面的并行加载。</li>
+<li>使用iframe之前需要考虑这两个缺点。如果需要使用iframe，最好是通过javascript动态给iframe添加src属性值，这样可以绕开以上两个问题。</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;前端面试题小集&quot;&gt;&lt;a href=&quot;#前端面试题小集&quot; class=&quot;headerlink&quot; title=&quot;前端面试题小集&quot;&gt;&lt;/a&gt;前端面试题小集&lt;/h2&gt;&lt;p&gt;话不多说，先上题。&lt;/p&gt;
+&lt;h5 id=&quot;一、一个页面上两个div左右铺满整个浏览器，要保证左边的
+    
+    </summary>
+    
+      <category term="面试" scheme="http://yoursite.com/categories/%E9%9D%A2%E8%AF%95/"/>
+    
+    
+      <category term="面试题" scheme="http://yoursite.com/tags/%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+    
+  </entry>
   
   <entry>
     <title>Nodejs 学习小结</title>
